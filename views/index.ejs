@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> ToDo's</h1>
+    <ul>
+        <% for(let i = 0; i<zebra.length; i++) { %>
+            <li>
+                <span><%= zebra[i].todo %></span>  <!-- we are pulling out each item in the array , when adding spaces it will not read it correctly--> 
+                <span class="del">delete</span>
+            </li>
+        <% } %>
+    <ul>
+
+    <form action="/createTodo" method="POST">
+        <input type="text" placeholder="Enter Todo Item " name="todoItem">
+        <input type="submit">
+    </form>
+    <script src="js/main.js" ></script>
+</body>
+</html>

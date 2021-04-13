@@ -39,6 +39,17 @@ app.post('/createTodo',(req,res) => { // whatever theaxtion is, is what we put i
         res.redirect('/')//this will be the response
     })
 })//whenevr you make a request to a server , you are sending all this information 
+app.put('/markComplete', (req, res) => {
+    db.collection('todos').updateOne({todo: req.body.rainbowUnicorn})//this takes in the match 
+    $set: {
+        complete: true
+    }
+})
+    .then( result => {
+        console.log('Marked Complete')
+        res.json('Marked Complete')
+    })
+
 app.delete('/deleteTodo', (req ,res) => {
     console.log(req.body)
     db.collection('todos').deleteOne({ todo:req.body.rainbowUnicorn})
